@@ -19,6 +19,17 @@ Esta é uma aplicação criada com o CronApp IDE.
 7. Aceite as atualizações de bibliotecas sugeridas pela IDE
 8. Para rodar, vá em Executar > Rodar
 
+## Sobre o projeto
+
+  O projeto é referente a idéia de uma gerenciador de tarefas, onde um usuário administrador cria as prioridades, tarefas e depois as gerencia, distribuindo entre os usuários cadastrados.
+  
+## Criando e gerenciando as tarefas
+
+1. Crie as prioridades
+2. Crie as tarefas
+3. Distribua as tarefas
+
+
 ## Referências
 
 [CronApp IDE](http://www.cronapp.io/)

@@ -1,3 +1,7 @@
+# Autor
+
+Matheus Portugal Ribeiro
+
 # Introdução
 
 Esta é uma aplicação criada com o CronApp IDE.

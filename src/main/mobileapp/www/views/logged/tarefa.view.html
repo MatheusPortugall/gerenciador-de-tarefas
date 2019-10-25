@@ -1,0 +1,44 @@
+<ion-view cache-view="false" hide-back-button="true" class="pane">
+  <ion-header-bar class="bar bar-header bar-positive" xattr-theme="bar-positive" data-component="crn-ion-header-bar">
+      <div side="left" class="buttons buttons-left header-item">
+        <button class="button button-clear" ng-if="!Tarefa.inserting &amp;&amp; !Tarefa.editing" menu-toggle="left" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-navicon"></i> </button>
+        <button class="button button-clear" ng-if="Tarefa.inserting || Tarefa.editing" ng-click="Tarefa.cancel()" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-ios-arrow-back"></i> </button>
+      </div>
+        <h1 class="title">Tarefa</h1>
+      <div side="right" class="buttons buttons-right header-item">
+        <button class="button button-clear" ng-if="!Tarefa.inserting &amp;&amp; !Tarefa.editing" ng-click="Tarefa.startInserting()" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-ios-plus-empty"></i> </button>
+        <button class="button button-clear" ng-if="Tarefa.inserting || Tarefa.editing" ng-click="Tarefa.post()" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-ios-checkmark"></i> </button>
+      </div>
+  </ion-header-bar>
+  <ion-content data-component="crn-ion-content" class="has-header">
+    <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-906854">
+      <datasource name="Tarefa" entity="app.Tarefa" keys="id" rows-per-page="10" delete-message="Deseja remover?" class="" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;nomeTarefa&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;descricao&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false}]"></datasource>
+    </div>
+	
+    <div crn-datasource="Tarefa" class="" ng-hide="Tarefa.editing || Tarefa.inserting">
+      <div class="component-holder ng-binding ng-scope" data-component="crn-ion-list" id="crn-ion-list-main">
+        <cron-list ng-model="vars.cronlistTarefa" id="ion-list-main" options="{&quot;dataSourceScreen&quot;:{&quot;name&quot;:&quot;Tarefa&quot;,&quot;entity&quot;:&quot;app.Tarefa&quot;,&quot;entityDataSource&quot;:{&quot;id&quot;:&quot;app.Tarefa&quot;,&quot;customId&quot;:&quot;Tarefa&quot;,&quot;name&quot;:&quot;Tarefa&quot;,&quot;customQueryName&quot;:&quot;app.Tarefa&quot;,&quot;paramValues&quot;:[],&quot;entityFullName&quot;:&quot;app.entity.Tarefa&quot;,&quot;schemaFields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;nomeTarefa&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;descricao&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false}],&quot;type&quot;:&quot;entity&quot;},&quot;schema&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;nomeTarefa&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;descricao&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false}],&quot;id&quot;:&quot;app.Tarefa&quot;},&quot;allowPaging&quot;:true,&quot;allowSorting&quot;:true,&quot;allowGrouping&quot;:false,&quot;allowSelectionTotalPageToShow&quot;:true,&quot;allowRefreshGrid&quot;:true,&quot;allowSelectionRow&quot;:true,&quot;hideModalButtons&quot;:true,&quot;editable&quot;:&quot;datasource&quot;,&quot;columns&quot;:[{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;nomeTarefa&quot;,&quot;headerText&quot;:&quot;{{'NomeTarefa' | translate}}&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;format&quot;:&quot;&quot;,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;,&quot;comboboxOptions&quot;:{&quot;dataSourceScreen&quot;:{&quot;schema&quot;:[]},&quot;relationDataSource&quot;:{&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[]},{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;descricao&quot;,&quot;headerText&quot;:&quot;{{'Descricao' | translate}}&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:false,&quot;format&quot;:&quot;&quot;,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;,&quot;comboboxOptions&quot;:{&quot;dataSourceScreen&quot;:{&quot;schema&quot;:[]},&quot;relationDataSource&quot;:{&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[]},{&quot;dataType&quot;:&quot;Command&quot;,&quot;sortable&quot;:false,&quot;filterable&quot;:false,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;command&quot;:&quot;edit|destroy&quot;,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;,&quot;comboboxOptions&quot;:{&quot;dataSourceScreen&quot;:{&quot;schema&quot;:[]},&quot;relationDataSource&quot;:{&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[]}],&quot;toolBarButtons&quot;:[{&quot;type&quot;:&quot;Native&quot;,&quot;title&quot;:&quot;create&quot;}],&quot;details&quot;:[],&quot;groupings&quot;:[]}" class="" style="">
+        </cron-list>
+      </div>
+    </div>
+    <div ng-show="Tarefa.editing || Tarefa.inserting">
+      <form crn-datasource="Tarefa">
+        <div class="list" ng-disabled="!Tarefa.editing &amp;&amp; !Tarefa.inserting">
+            <!-- nomeTarefa begin -->
+            <label for="textinput-nomeTarefa-81542" class="item item-input item-stacked-label" data-component="crn-input-floating">
+              <span class="input-label">{{'Tarefa' | translate}}</span>
+              <input type="text" placeholder="{{'Tarefa' | translate}}" ng-model="Tarefa.active.nomeTarefa" id="textinput-nomeTarefa-81542" name="textinput-nomeTarefa" mask="" required="required">
+            </label>
+            <!-- descricao begin -->
+            <label for="textinput-descricao-81542" class="item item-input item-stacked-label" data-component="crn-input-floating">
+              <span class="input-label">{{'Descrição' | translate}}</span>
+              <input type="text" placeholder="{{'Descrição' | translate}}" ng-model="Tarefa.active.descricao" id="textinput-descricao-81542" name="textinput-descricao" mask="" required="required">
+            </label>
+
+            <!-- NtoN  -->
+            <!-- NtoN  end-->
+      
+    </div></form>
+  
+
+</div></ion-content></ion-view>

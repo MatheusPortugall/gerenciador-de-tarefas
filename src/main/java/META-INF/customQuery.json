@@ -1,0 +1,398 @@
+{
+  "auth": {
+    "customId": "auth",
+    "queryName": "Autenticar",
+    "screen": "",
+    "sourceType": "entityFullName",
+    "entitySimpleName": "User",
+    "entityFullName": "app.entity.User",
+    "query": "select o from User o where o.login \u003d :login",
+    "queryParamsValues": [
+      {
+        "fieldName": "login",
+        "fieldValue": ""
+      }
+    ],
+    "verbs": {
+      "GET": false,
+      "POST": false,
+      "PUT": false,
+      "DELETE": false
+    },
+    "events": {},
+    "defaultValues": {},
+    "security": {},
+    "errorHandles": {},
+    "serviceUrl": "api/cronapi/query/auth/"
+  },
+  "roles": {
+    "customId": "roles",
+    "queryName": "Obter Autorização",
+    "screen": "",
+    "sourceType": "entityFullName",
+    "entitySimpleName": "Role",
+    "entityFullName": "app.entity.Role",
+    "query": "select o.id from Role o where o.user.login \u003d :login",
+    "queryParamsValues": [
+      {
+        "fieldName": "login",
+        "fieldValue": ""
+      }
+    ],
+    "verbs": {
+      "GET": false,
+      "POST": false,
+      "PUT": false,
+      "DELETE": false,
+      "FILTER": true
+    },
+    "events": {},
+    "defaultValues": {},
+    "security": {},
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "errorHandles": {},
+    "serviceUrl": "api/cronapi/query/roles/"
+  },
+  "device": {
+    "customId": "device",
+    "queryName": "Atualizar Dispositivos",
+    "screen": "",
+    "sourceType": "entityFullName",
+    "entitySimpleName": "Device",
+    "entityFullName": "app.entity.Device",
+    "query": {
+      "isValid": true,
+      "isEmpty": false,
+      "operationType": "object",
+      "type": "select",
+      "rulesEntity": [
+        {
+          "entity": "Device",
+          "namespace": "app.entity.Device",
+          "alias": "d"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "d",
+          "type": "string"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "rules": [
+          {
+            "id": "d.id",
+            "field": "d.id",
+            "type": "string",
+            "input": "text",
+            "operator": "equal",
+            "value": ":id",
+            "valueIsField": false
+          }
+        ],
+        "not": false,
+        "valid": true
+      },
+      "isRawSql": false,
+      "multiTenant": true,
+      "paginatorAutomatic": false
+    },
+    "queryParamsValues": [
+      {
+        "fieldName": "id",
+        "fieldValue": ""
+      }
+    ],
+    "verbs": {
+      "GET": true,
+      "POST": true,
+      "PUT": true,
+      "DELETE": true,
+      "FILTER": true
+    },
+    "events": {},
+    "defaultValues": {},
+    "security": {},
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "errorHandles": {},
+    "serviceUrl": "api/cronapi/query/1jy88nt41afza/"
+  },
+  "query961605": {
+    "customId": "query961605",
+    "queryName": "tarefasusuariologado",
+    "sourceType": "entityFullName",
+    "entitySimpleName": "UserTarefa",
+    "entityFullName": "app.entity.UserTarefa",
+    "query": {
+      "isValid": true,
+      "isEmpty": false,
+      "operationType": "object",
+      "type": "select",
+      "rulesEntity": [
+        {
+          "entity": "UserTarefa",
+          "namespace": "app.entity.UserTarefa",
+          "alias": "u"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "u",
+          "type": "string"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "rules": [
+          {
+            "id": "u.user.id",
+            "field": "u.user.id",
+            "type": "string",
+            "input": "text",
+            "operator": "equal",
+            "value": ":userId",
+            "valueIsField": false
+          }
+        ],
+        "not": false,
+        "valid": true
+      },
+      "isRawSql": false,
+      "multiTenant": false,
+      "paginatorAutomatic": false,
+      "pagination": false
+    },
+    "queryParamsValues": [
+      {
+        "fieldName": "userId",
+        "fieldValue": {
+          "type": "server",
+          "blocklyMethod": "ObterIdLogado",
+          "blocklyClass": "blockly.FuncaoUsuario",
+          "blocklyLanguage": "java",
+          "blocklyParams": [],
+          "blocklyJson": {
+            "namespace": "blockly.FuncaoUsuario",
+            "sourcePath": "src/main/java/blockly/FuncaoUsuario.blockly",
+            "language": "java",
+            "methods": [
+              {
+                "name": "ObterIdLogado",
+                "hasReturn": "true",
+                "params": []
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "verbs": {
+      "GET": true,
+      "POST": true,
+      "PUT": true,
+      "DELETE": true,
+      "FILTER": true,
+      "COUNT": true
+    },
+    "events": {},
+    "defaultValues": {
+      "user": {
+        "type": "server",
+        "blocklyMethod": "ObterIdLogado",
+        "blocklyClass": "blockly.FuncaoUsuario",
+        "blocklyLanguage": "java",
+        "blocklyParams": [],
+        "blocklyJson": {
+          "namespace": "blockly.FuncaoUsuario",
+          "sourcePath": "src/main/java/blockly/FuncaoUsuario.blockly",
+          "language": "java",
+          "methods": [
+            {
+              "name": "ObterIdLogado",
+              "hasReturn": "true",
+              "params": []
+            }
+          ]
+        }
+      }
+    },
+    "defaultValuesProperties": {},
+    "security": {},
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {},
+    "serviceUrl": "api/cronapi/odata/v2/app/query961605/"
+  },
+  "query608250": {
+    "customId": "query608250",
+    "queryName": "tarefasdomembrologado",
+    "sourceType": "entityFullName",
+    "entitySimpleName": "UserTarefa",
+    "entityFullName": "app.entity.UserTarefa",
+    "query": {
+      "isValid": true,
+      "isEmpty": false,
+      "operationType": "object",
+      "type": "select",
+      "rulesEntity": [
+        {
+          "entity": "UserTarefa",
+          "namespace": "app.entity.UserTarefa",
+          "alias": "u"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "u",
+          "type": "string"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "rules": [
+          {
+            "id": "u.user.id",
+            "field": "u.user.id",
+            "type": "string",
+            "input": "text",
+            "operator": "equal",
+            "value": ":userId",
+            "valueIsField": false
+          }
+        ],
+        "not": false,
+        "valid": true
+      },
+      "isRawSql": false,
+      "multiTenant": false,
+      "paginatorAutomatic": false,
+      "pagination": false
+    },
+    "queryParamsValues": [
+      {
+        "fieldName": "userId",
+        "fieldValue": {
+          "type": "server",
+          "blocklyMethod": "obterIdDoUsuarioLogado",
+          "blocklyClass": "blockly.FuncaoObterIdDoUsuarioLogado",
+          "blocklyLanguage": "java",
+          "blocklyParams": [],
+          "blocklyJson": {
+            "namespace": "blockly.FuncaoObterIdDoUsuarioLogado",
+            "sourcePath": "src/main/java/blockly/FuncaoObterIdDoUsuarioLogado.blockly",
+            "language": "java",
+            "methods": [
+              {
+                "name": "obterIdDoUsuarioLogado",
+                "hasReturn": "true",
+                "params": []
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "verbs": {
+      "GET": true,
+      "POST": true,
+      "PUT": true,
+      "DELETE": true,
+      "FILTER": true,
+      "COUNT": true
+    },
+    "events": {},
+    "defaultValues": {
+      "user": {
+        "type": "server",
+        "blocklyMethod": "obterIdDoUsuarioLogado",
+        "blocklyClass": "blockly.FuncaoObterIdDoUsuarioLogado",
+        "blocklyLanguage": "java",
+        "blocklyParams": [],
+        "blocklyJson": {
+          "namespace": "blockly.FuncaoObterIdDoUsuarioLogado",
+          "sourcePath": "src/main/java/blockly/FuncaoObterIdDoUsuarioLogado.blockly",
+          "language": "java",
+          "methods": [
+            {
+              "name": "obterIdDoUsuarioLogado",
+              "hasReturn": "true",
+              "params": []
+            }
+          ]
+        }
+      }
+    },
+    "defaultValuesProperties": {},
+    "security": {},
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {},
+    "serviceUrl": "api/cronapi/odata/v2/app/query608250/"
+  },
+  "query58001": {
+    "customId": "tarefasMembro",
+    "queryName": "ObterDadosDaTarefaDoMembro",
+    "sourceType": "blockly",
+    "blockly": {
+      "type": "server",
+      "blocklyMethod": "obterPrioridadeDaTarefa",
+      "blocklyClass": "blockly.ObterPrioridadeDaTarefa",
+      "blocklyLanguage": "java",
+      "blocklyParams": [],
+      "blocklyJson": {
+        "namespace": "blockly.ObterPrioridadeDaTarefa",
+        "sourcePath": "src/main/java/blockly/obterPrioridadeDaTarefa.blockly",
+        "language": "java",
+        "methods": [
+          {
+            "name": "obterPrioridadeDaTarefa",
+            "hasReturn": "true",
+            "params": []
+          }
+        ]
+      },
+      "blocklyGETMethod": "obterPrioridadeDaTarefa",
+      "blocklyPOSTMethod": "obterPrioridadeDaTarefa",
+      "blocklyPUTMethod": "obterPrioridadeDaTarefa",
+      "blocklyDELETEMethod": "obterPrioridadeDaTarefa",
+      "blocklyFILTERMethod": "obterPrioridadeDaTarefa",
+      "blocklyCOUNTMethod": "obterPrioridadeDaTarefa"
+    },
+    "query": "",
+    "queryParamsValues": [],
+    "verbs": {
+      "GET": true,
+      "POST": true,
+      "PUT": true,
+      "DELETE": true,
+      "FILTER": true,
+      "COUNT": true
+    },
+    "events": {},
+    "defaultValues": {},
+    "defaultValuesProperties": {},
+    "security": {},
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {},
+    "serviceUrl": "api/cronapi/odata/v2/app/query58001/"
+  }
+}
